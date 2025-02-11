@@ -11,6 +11,33 @@ app.get("/", async function (req, res) {
 res.sendFile(path.join(__dirname, "index.html"));
 });
 
+// API Endpoint
+app.get('/shoti', (req, res) => {
+    // Path to the JSON file
+    const filePath = path.join(__dirname, 'shoti.json');
+
+    // Read the JSON file
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        if (err) {
+            return res.status(500).json({ error: 'Failed to read the responses file.' });
+        }
+
+        try {
+            // Parse the JSON data
+            const responses = JSON.parse(data);
+
+            // Select a random object
+            const randomIndex = Math.floor(Math.random() * responses.length);
+            const randomItem = responses[randomIndex];
+
+            // Send the random object as JSON
+            res.json(randomItem);
+        } catch (error) {
+            res.status(500).json({ error: 'Invalid JSON format in the file.' });
+        }
+    });
+});
+
 // ✅ GET Route for GPT (Single Message via Query)
 app.get("/gpt", async (req, res) => {
     try {
