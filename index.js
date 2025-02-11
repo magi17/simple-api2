@@ -7,6 +7,10 @@ const PORT = process.env.PORT || 4000;
 
 app.use(express.json()); // Middleware to parse JSON requests
 
+app.get("/", async function (req, res) {
+res.sendFile(path.join(__dirname, "index.html"));
+});
+
 // ✅ GET Route for GPT (Single Message via Query)
 app.get("/gpt", async (req, res) => {
     try {
