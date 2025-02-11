@@ -1,0 +1,25 @@
+
+{
+  "name": "apis",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" &&>
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magi17/Simple->
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/magi17/Simple-api/>
+  },
+  "homepage": "https://github.com/magi17/Simple-a>
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2",
+    "gpti": "^2.1.8"
+  }
+}
